@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!--Import model-->
+@model IEnumerable<ProvoRestaurants.Models.UserRestaurant>
+
+<div>
+    <h2>Here are the user submitted restaurants</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Submitter</th>
+                <th>Restaurant</th>
+                <th>Favorite Dish</th>
+                <th>Restaurant Phone Number</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (ProvoRestaurants.Models.UserRestaurant x in Model)
+            {
+                <tr>
+                    <td>@x.SubmitterName</td>
+                    <td>@x.RestaurantName</td>
+                    <td>@x.FavoriteDish</td>
+                    <td>@x.RestaurantPhone</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

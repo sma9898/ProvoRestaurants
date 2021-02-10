@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Top 5 Restaurants in Provo";
+}
+
+<!--Enable easy iteration-->
+@model IEnumerable<string>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Top 5 Restaurants</title>
+    <meta name="viewport" content="width=device-width" />
+</head>
+
+<body>
+    <header>
+        <h4 class="bg-primary text-white text-center">These are the top 5 restaurants in Provo (according to me)</h4>
+    </header>
+
+    <div class="list-group">
+        <ul>
+            @foreach (string r in Model) //Loop through restaurants
+            {
+                <!--Lists each item from the model-->
+                <!--Html.Raw() lets us use HTML in the string output and be converted-->
+                <li class="list-group-item">@Html.Raw(r)</li>
+
+            }
+        </ul>
+    </div>
+</body>
+</html>
